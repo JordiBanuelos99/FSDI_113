@@ -3,7 +3,12 @@
 {% block title %} Home {% endblock title %}
 
 {% block content %}
-<h1>Home</h1>
-<p>Welcome to the home page!</p>
-{{ weather|safe }}
+<div class="container text-center">
+    <h1 style="font-weight: bold;">Home</h1>
+    <p>Welcome to the home page!</p>
+</div>
+<div class="container" style="background-color:  rgba(21, 22, 27, 0.664); padding: 1.5rem; border-radius: 2%;">
+    {{ weather|safe }}
+</div>
+
 {% endblock content %}

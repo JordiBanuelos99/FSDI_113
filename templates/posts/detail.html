@@ -3,17 +3,22 @@
 {% block title %}{{ post.title }}{% endblock title %}
 
 {% block content %}
-<h1>{{ post.title }}</h1>
-<h2>{{ post.subtitle }}</h2>
-<small> By {{ post.author }} on: {{ post.created_on }}</small>
-<p>{{ post.body }}</p>
+<div class="container text-center">
+    <h1 style="font-weight: bold;">{{post.title}}</h1>
+</div>
+<div class="container" style="background-color:  rgba(21, 22, 27, 0.664); padding: 1.5rem; border-radius: 2%;">
+    <div style="margin-bottom: 20px">
+        <h2 style="font-weight: bold">{{ post.subtitle }}</h2>
+        <small style="font-style: italic; color: gray"> By {{ post.author }} on: {{ post.created_on }}</small>
+    </div>
+    <p>{{ post.body }}</p>
 
-{% if user.id == post.author.id %}
-<p>
-    <a href="{% url 'post_edit' post.id %}" class="btn btn-primary">Edit</a>
-</p>
-<p>
-    <a href="{% url 'post_delete' post.id %}" class="btn btn-danger">Delete</a>
-</p>
+    <div class="text-end" style="margin: 10px">
+        {% if user.id == post.author.id %}
+        <a href="{% url 'post_edit' post.id %}" style="color:white">Edit</a>
+        <a href="{% url 'post_delete' post.id %}" style="color:white">Delete</a>
+    </div>
+
+</div>
 {% endif %}
 {% endblock content %}

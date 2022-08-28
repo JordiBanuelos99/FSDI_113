@@ -3,10 +3,27 @@
 {% block title %} Sign Up{% endblock title %}
 
 {% block content %}
-<h3>Sign Up</h3>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <input type="submit" value="Sign Up" class="btn btn-success">
-</form>
+<div class="container">
+    <div class="row g-0">
+        <div class="col-7"
+            style="background-color: rgba(21, 22, 27, 0.664); padding: 1.5rem; border-radius: 2%; height: 86vh">
+            <div class="container">
+                <h1 style="font-weight: bold;">Sign Up</h1>
+                <p>Let's create an account!</p>
+            </div>
+            <div style="margin-top: 10%; margin-left: 5%;">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p}}
+                    <div class="text-center">
+                        <input type="submit" value="Sign Up" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-5"
+            style="background-image: url('https://cdn.create.vista.com/api/media/small/164806416/stock-photo-young-man-listening-music'); background-size: cover; height: 86vh; margin:0; background-position:-14rem;">
+        </div>
+    </div>
+</div>
 {% endblock content %}

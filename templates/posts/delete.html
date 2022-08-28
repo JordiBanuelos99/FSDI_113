@@ -3,10 +3,13 @@
 {% block title %} Delete Post {% endblock %}
 
 {% block content %}
-<h1>Delete Post</h1>
-<p>Are you sure you want to delete "{{ post.title }}?"</p>
-<form method="POST">
-    {% csrf_token %}
-    <input type="submit" value="Confirm">
-</form>
+<div class="container" style="background-color:  rgba(21, 22, 27, 0.664); padding: 1.5rem; border-radius: 2%;">
+    <h1>Delete Post</h1>
+    <p>Are you sure you want to delete "{{ post.title }}?"</p>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Confirm" class="btn btn-success">
+    </form>
+</div>
 {% endblock content %}

@@ -3,10 +3,28 @@
 {% block title %} Log in{% endblock title %}
 
 {% block content %}
-<h3>Log In</h3>
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <input type="submit" value="Log In" class="btn btn-success">
-</form>
+
+<div class="container">
+    <div class="row g-0">
+        <div class="col-6"
+            style="background-color:  rgba(21, 22, 27, 0.664); padding: 1.5rem; border-radius: 2%; height: 80vh; ">
+            <div class="container">
+                <h1 style="font-weight: bold;">Log In</h1>
+                <p>Sign in to start posting!</p>
+            </div>
+            <div style="margin-top: 10%; margin-left: 5%;">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p}}
+                    <div class="text-center">
+                        <input type="submit" value="Log In" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-6"
+            style="background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/2-asian-woman-with-headphones-and-listening-to-music-anek-suwannaphoom.jpg'); background-size: cover; height: 80vh; margin:0; background-position:-11rem;">
+        </div>
+    </div>
+</div>
 {% endblock content %}
